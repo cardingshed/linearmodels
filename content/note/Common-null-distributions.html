@@ -1,0 +1,40 @@
+---
+categories:
+- Unit-1
+slug: common-null-distributions
+tags:
+- normal
+- chi-squared
+- t-distribution
+- F-distribution
+- Central-limit-theorem
+- Law-of-large-numbers
+title: Intuitive background for parameter distributions
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>How to understand which distribution is used when and why it’s in that test…</p>
+<p>Often, parameters in linear modelling can be assumed to follow a known distribution if a <em>null-hypothesis</em> is true, which is the justification for e.g. Wald-tests (normal), chi-squared tests, <span class="math inline">\(t\)</span>-tests, and F-tests.</p>
+<p>The normal, chi-squared, <span class="math inline">\(t\)</span> and F distributions are the most commonly met as <em>null-distributions</em> in these tests - this is a brief guide to help build an intuitive understanding of why they arise.</p>
+<div id="normal-distribution" class="section level1">
+<h1>Normal Distribution</h1>
+<p>Two famous results in statistics help explain the importance of the mean, (=<em>expected value</em>), and the normal distribution:</p>
+<p><strong>The law of large numbers</strong></p>
+<p>Taking multiple readings and averaging them produces a more accurate estimate, a famous example is when Michelson was measuring the <a href="https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light">speed of light</a>. To see why this is so consider the variance:</p>
+<p>With one experimental set of data <span class="math inline">\({X_1}\)</span> to estimate a value <span class="math inline">\(X\)</span>, we might have <span class="math inline">\(\mathbb{E}(X)=\mu\)</span> and <span class="math inline">\(\mathbb{V}(X)=\sigma^2\)</span>.
+However, we can more accurately zero-in on <span class="math inline">\(\mu\)</span> by considering the expectation of multiple averages - if we have <span class="math inline">\(n\)</span> independent sets of data <span class="math inline">\({X_i}\)</span> then <span class="math display">\[\mathbb{E}(\bar{X_i})=\mathbb{E}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n}\sum_{i=1}^n \mathbb{E}(X_i)=\frac{1}{n}n\mu=\mu\]</span> (still!), but crucially…
+<span class="math display">\[\mathbb{V}(\bar{X_i})=\mathbb{V}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n^2}\sum_{i=1}^n \mathbb{V}(X_i)=\frac{1}{n^2}n\sigma^2=\frac{\sigma^2}{n}\]</span> so <span class="math inline">\(\bar{X_i}\)</span> is probably <em>closer</em> to <span class="math inline">\(\mu\)</span> than <span class="math inline">\(\bar{X_1}\)</span> is - the standard deviation reduces by a factor of <span class="math inline">\(\sqrt{n}\)</span> as <span class="math inline">\(n\)</span> becomes a larger number.</p>
+<p><strong>The Central Limit Theorem</strong></p>
+</div>
+<div id="chi-squared-distribution" class="section level1">
+<h1>chi-squared Distribution</h1>
+</div>
+<div id="t-distribution" class="section level1">
+<h1>t Distribution</h1>
+</div>
+<div id="f-distribution" class="section level1">
+<h1>F Distribution</h1>
+<p>The F distribution comes from the ratio of two chi-squared random variables. Recall from above that chi-squared is typically associated with estimating a variance parameter (like <span class="math inline">\(\sigma^2\)</span>), and indeed we meet the F distribution when we wish to compare two variances. The classic example is in “ANOVA” analysis - which is unsurprising if we know that ANOVA stands for <em>analysis of variance</em>.</p>
+</div>

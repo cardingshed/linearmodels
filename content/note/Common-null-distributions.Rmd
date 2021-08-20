@@ -1,0 +1,51 @@
+---
+categories:
+- Unit-1
+slug: common-null-distributions
+tags:
+- normal
+- chi-squared
+- t-distribution
+- F-distribution
+- Central-limit-theorem
+- Law-of-large-numbers
+title: Intuitive background for parameter distributions
+---
+How to understand which distribution is used when and why it's in that test...
+
+Often, parameters in linear modelling can be assumed to follow a known distribution if a *null-hypothesis* is true, which is the justification for e.g. Wald-tests (normal), chi-squared tests, $t$-tests, and F-tests. 
+
+The normal, chi-squared, $t$ and F distributions are the most commonly met as *null-distributions* in these tests - this is a brief guide to help build an intuitive understanding of why they arise.
+
+# Normal Distribution
+
+Two famous results in statistics help explain the importance of the mean, (=*expected value*), and the normal distribution:
+
+**The law of large numbers**
+
+Taking multiple readings and averaging them produces a more accurate estimate, a famous example is when Michelson was measuring the [speed of light](https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light).  To see why this is so consider the variance:
+
+With one experimental set of data ${X_1}$ to estimate a value $X$,  we might have $\mathbb{E}(X)=\mu$ and $\mathbb{V}(X)=\sigma^2$.
+However, we can more accurately zero-in on $\mu$ by considering the expectation  of multiple averages - if we have $n$ independent sets of data ${X_i}$ then $$\mathbb{E}(\bar{X_i})=\mathbb{E}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n}\sum_{i=1}^n \mathbb{E}(X_i)=\frac{1}{n}n\mu=\mu$$ (still!), but crucially...
+$$\mathbb{V}(\bar{X_i})=\mathbb{V}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n^2}\sum_{i=1}^n \mathbb{V}(X_i)=\frac{1}{n^2}n\sigma^2=\frac{\sigma^2}{n}$$ so $\bar{X_i}$ is probably *closer* to $\mu$ than $\bar{X_1}$ is - the standard deviation reduces by a factor of $\sqrt{n}$ as $n$ becomes a larger number.
+
+**The Central Limit Theorem**
+
+
+
+# chi-squared Distribution
+
+
+
+
+# t Distribution
+
+# F Distribution
+
+The F distribution comes from the ratio of two chi-squared random variables.  Recall from above that chi-squared is typically associated with estimating a variance parameter (like $\sigma^2$), and indeed we meet the F distribution when we wish to compare two variances.  The classic example is in "ANOVA" analysis - which is unsurprising if we know that ANOVA stands for *analysis of variance*.
+
+
+
+
+
+
