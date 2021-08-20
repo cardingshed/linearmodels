@@ -1,0 +1,30 @@
+baseURL: http://example.org/
+languageCode: en-us
+title: hugo-simpledoc-theme
+theme: hugo-simpledoc-theme
+blackfriday:
+  angledQuotes: yes
+  extensions: hardLineBreak
+  fractions: no
+  plainIDAnchors: yes
+  smartlists: yes
+menu:
+  top:
+    - name: hugo-simpledoc-theme GitHub Repository
+      url: https://github.com/aerohub/hugo-simpledoc-theme
+      weight: 20
+    - name: Hugo - A Fast and Flexible Website Generator
+      url: http://gohugo.io/
+      weight: 10
+    - name: Original WPThemeDoc by Rich Tabor
+      url: https://github.com/richtabor/WPThemeDoc
+      weight: 30
+params:
+  author: Pavel Kanyshev
+  bttButton: ''
+  description: hugo-simpledoc-theme - clean and convenient documentation theme for
+    Hugo website generator
+  headerDescription: Set-up & general guide to make a clean documentation page with
+    **Hugo** and **hugo-simpledoc-theme**
+  headerTitle: hugo-simpledoc-theme demo
+  keywords: hugo, documentation, hugo theme, hugo simple documentation theme

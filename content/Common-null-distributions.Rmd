@@ -1,0 +1,42 @@
+---
+anchor: common-null-distributions
+title: Normal, chi-squared, t and F distributions
+weight: 50
+---
+How to understand which distribution is used when and why it's in that test...
+
+Often, parameters in linear modelling can be assumed to follow a known distribution if a *null-hypothesis* is true, which is the justification for e.g. Wald-tests (normal), chi-squared tests, t-tests, and F-tests. 
+
+The normal, chi-squared, t and F distributions are the most commonly used distributions in tests in linear modelling - this is a brief guide to help build an intuitive understanding of why they arise.
+
+# Normal Distribution
+
+Two famous results in statistics help explain the importance of the mean, (*expected value*), and the normal distribution:
+
+**The law of large numbers**
+
+It's been known for many centuries that taking multiple readings and averaging them produces a better estimate, for example when Michelson was measuring the [speed of light](https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light).  To see why this is so consider the variance:
+
+
+
+
+**The Central Limit Theorem**
+
+
+
+# chi-squared Distribution
+
+
+
+
+# t Distribution
+
+# F Distribution
+
+The F distribution comes from the ratio of two chi-squared random variables.  Recall from above that chi-squared is typically associated with estimating a variance parameter (like sigma^2), and indeed we meet the F distribution when we wish to compare two variances.  The classic example is in "ANOVA" analysis - which is unsurprising if we know that ANOVA stands for *analysis of variance*.
+
+
+
+
+
+
