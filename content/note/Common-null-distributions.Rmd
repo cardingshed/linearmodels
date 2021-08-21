@@ -15,13 +15,13 @@ How to understand which distribution is used when and why it's in that test...
 
 Often, parameters in linear modelling can be assumed to follow a known distribution if a *null-hypothesis* is true, which is the justification for e.g. Wald-tests (normal), chi-squared tests, $t$-tests, and F-tests. 
 
-The normal, chi-squared, $t$ and F distributions are the most commonly met as *null-distributions* in these tests - this is a brief guide to help build an intuitive understanding of why they arise.
+The [normal](#normal-link), [chi-squared](#chi-link), [t](#t-link) and [F](#F-link) distributions are the most commonly met as *null-distributions* in these tests - this is a brief guide to help build an intuitive understanding of why they arise.
 
-# Normal Distribution
+# Normal Distribution {#normal-link}
 
 Two famous results in statistics help explain the importance of the mean, (=*expected value*), and the normal distribution:
 
-**The law of large numbers**
+## The law of large numbers
 
 Taking multiple readings and averaging them produces a more accurate estimate, a famous example is when Michelson was measuring the [speed of light](https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light).  To see why this is so consider the variance:
 
@@ -29,20 +29,50 @@ With one experimental set of data ${X_1}$ to estimate a value $X$,  we might hav
 However, we can more accurately zero-in on $\mu$ by considering the expectation  of multiple averages - if we have $n$ independent sets of data ${X_i}$ then $$\mathbb{E}(\bar{X_i})=\mathbb{E}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n}\sum_{i=1}^n \mathbb{E}(X_i)=\frac{1}{n}n\mu=\mu$$ (still!), but crucially...
 $$\mathbb{V}(\bar{X_i})=\mathbb{V}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n^2}\sum_{i=1}^n \mathbb{V}(X_i)=\frac{1}{n^2}n\sigma^2=\frac{\sigma^2}{n}$$ so $\bar{X_i}$ is probably *closer* to $\mu$ than $\bar{X_1}$ is - the standard deviation reduces by a factor of $\sqrt{n}$ as $n$ becomes a larger number.
 
-**The Central Limit Theorem**
+## The Central Limit Theorem
 
 
 
-# chi-squared Distribution
+# chi-squared Distribution {#chi-link}
+
+The origin of the $\chi^2$ distribution is as the sum of independent squared standard normal variables, i.e. if
+
+$Y = Z_1^2 + Z_2^2 + \dots Z_n^2$, where $Z_i \sim \mathcal{N}(0,1)$, then $Y \sim \chi^2(n)$, a *chi-squared distribution with $n$ degrees of freedom*.  Note the relationship with the CLT: as more terms are added the chi-squared distribution (slowly) becomes more like the normal. 
+
+```{r echo=FALSE, warning=FALSE}
+library(ggplot2)
+
+dataf <- data.frame(x=rep(seq(from=0.01, to=12, length.out=50), times=12), degf=rep(1:12, each=50)) 
+  
+dataf$density <- apply(dataf, 1, function(x) dchisq(x[1],x[2]))
+
+p <- ggplot(dataf,aes(x=x,y=density, group=degf, color=degf)) +
+  geom_line() +
+  ylim(0,0.75) + theme_minimal() +
+  labs(title = "Chi-sq degrees of freedom")
+p
+```
+
+
+If $X \sim \mathcal{N}(\mu,\sigma^2)$, we can intuitively see how a chi-squared distribution is related to sample variance: 
+$S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \mu)^2$ which implies $\frac{S^2}{\sigma^2}=\frac{1}{n-1}\sum_{i=1}^{n}(\frac{X_i - \mu}{\sigma})^2=\frac{1}{n-1}\sum_{i=1}^{n}Z_i^2$ where $Z_i \sim \mathcal{N}(0,1)$.  Note that in practice $\mu$ is not known but estimated by the sample mean $\bar{X}$ - this is why (hand-wavy stats!) there is one degree of freedom less (typical that for each parameter we estimate we lose a degree of freedom) and we have the result $$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$$
+For a more formal proof [see here](https://online.stat.psu.edu/stat414/lesson/26/26.3)
 
 
 
 
-# t Distribution
 
-# F Distribution
+# t Distribution {#t-link}
 
-The F distribution comes from the ratio of two chi-squared random variables.  Recall from above that chi-squared is typically associated with estimating a variance parameter (like $\sigma^2$), and indeed we meet the F distribution when we wish to compare two variances.  The classic example is in "ANOVA" analysis - which is unsurprising if we know that ANOVA stands for *analysis of variance*.
+
+# F Distribution {#F-link}
+
+The F distribution comes from the ratio of two chi-squared random variables.  Recall from above that chi-squared is typically associated with estimating a variance parameter (like $\sigma^2$), and indeed we meet the F distribution when we wish to compare two variances.  One classic example is checking the assumption of equal variance in a two sample $t$-test, or its more general version "ANOVA" - which is unsurprising if we know that ANOVA stands for *analysis of variance*.
+
+If $Y_1 \sim \chi^2(\nu_1)$ and $Y_2 \sim \chi^2(\nu_2)$ then we have: 
+$$ F = \frac{S_1/\nu_1}{S_2/\nu_2} \sim F(\nu_1,\nu_2)$$ An F distribution with $\nu_1$ and $\nu_2$ degrees of freedom. 
+<span style="color: red;">Caution</span>: the order that $Y_1$, $Y_2$ are chosen does matter, conventionally the choice is made so that the ratio is greater than one, and the $p$-value quoted twice the one-sided $P(F>Y_1/Y_2)$.
+
 
 
 
