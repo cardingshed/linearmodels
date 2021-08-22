@@ -30,6 +30,12 @@ However, we can more accurately zero-in on <span class="math inline">\(\mu\)</sp
 </div>
 <div id="the-central-limit-theorem" class="section level2">
 <h2>The Central Limit Theorem</h2>
+<p>This is the super-charged version of the law of large numbers, remember it talks about</p>
+<ul>
+<li>the sample mean as a variable, and how it relates to the distribution mean</li>
+<li>it’s an asymptotic result, so relies on “large” sample sizes</li>
+</ul>
+<p>The central limit theorem is amazingly general, the distribution of the sample mean converges to a normal distribution even if the underlying distribution of each datapoint is discrete or bimodal (it does converge more slowly then though…) so in practice a normal distribution can often be used to model the behaviour of an expected value.</p>
 </div>
 </div>
 <div id="chi-link" class="section level1">
@@ -43,11 +49,13 @@ For a more formal proof <a href="https://online.stat.psu.edu/stat414/lesson/26/2
 </div>
 <div id="t-link" class="section level1">
 <h1>t Distribution</h1>
+<p>The <span class="math inline">\(t\)</span> distribution is closely related to the normal distribution - it’s flatter, with more probability mass in the tails. As the degrees of freedom increase, it moves closer and closer to the standard normal, until %t()=(0,1)$.</p>
+<p>Having <em>degrees of freedom</em> is a clue that a <span class="math inline">\(\chi^2\)</span> distribution might be involved somewhere, and indeed</p>
 </div>
 <div id="F-link" class="section level1">
 <h1>F Distribution</h1>
 <p>The F distribution comes from the ratio of two chi-squared random variables. Recall from above that chi-squared is typically associated with estimating a variance parameter (like <span class="math inline">\(\sigma^2\)</span>), and indeed we meet the F distribution when we wish to compare two variances. One classic example is checking the assumption of equal variance in a two sample <span class="math inline">\(t\)</span>-test, or its more general version “ANOVA” - which is unsurprising if we know that ANOVA stands for <em>analysis of variance</em>.</p>
 <p>If <span class="math inline">\(Y_1 \sim \chi^2(\nu_1)\)</span> and <span class="math inline">\(Y_2 \sim \chi^2(\nu_2)\)</span> then we have:
-<span class="math display">\[ F = \frac{S_1/\nu_1}{S_2/\nu_2} \sim F(\nu_1,\nu_2)\]</span> An F distribution with <span class="math inline">\(\nu_1\)</span> and <span class="math inline">\(\nu_2\)</span> degrees of freedom.
+<span class="math display">\[ F = \frac{Y_1/\nu_1}{Y_2/\nu_2} \sim F(\nu_1,\nu_2)\]</span> An F distribution with <span class="math inline">\(\nu_1\)</span> and <span class="math inline">\(\nu_2\)</span> degrees of freedom.
 <span style="color: red;">Caution</span>: the order that <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span> are chosen does matter, conventionally the choice is made so that the ratio is greater than one, and the <span class="math inline">\(p\)</span>-value quoted twice the one-sided <span class="math inline">\(P(F&gt;Y_1/Y_2)\)</span>.</p>
 </div>
