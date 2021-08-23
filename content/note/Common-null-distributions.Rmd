@@ -85,7 +85,7 @@ q
 ```
 
 
-Having *degrees of freedom* is a clue that a $\chi^2$ distribution might be involved somewhere, and indeed if $Z \sim \mathcal{N}(0,1)$ and $V \sim \chi^2(\mu)$ then
+Having *degrees of freedom* is a clue that a $\chi^2$ distribution might be involved somewhere, and indeed if $Z \sim \mathcal{N}(0,1)$ and $V \sim \chi^2(\nu)$ then
 $$ T = \frac{Z}{\sqrt{(V/\nu)}}$$ has a $t$-distribution with $\nu$ degrees of freedom.
 
 Useful example: $Z = (\bar{X_n}-\mu)(\sqrt\frac{n}{\sigma^2})$ is standard normal by the central limit theorem, and $V = (n-1)\frac{S_n^2}{\sigma^2}$ is chi-squared with $(n-1)$ degrees of freedom as above, so:
