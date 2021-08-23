@@ -36,7 +36,7 @@ This is the super-charged version of the law of large numbers, remember it talks
 - the sample mean as a variable, and how it relates to the distribution mean
 - it's an asymptotic result, so relies on "large" sample sizes
 
-The central limit theorem is amazingly general, the distribution of the sample mean converges to a normal distribution even if the underlying distribution of each datapoint is discrete or bimodal (it does converge more slowly then though...) so in practice a normal distribution can often be used to model the behaviour of an expected value.
+The central limit theorem is amazingly general: the distribution of the sample mean converges to a normal distribution even if the underlying distribution of each datapoint is discrete or bimodal (it does converge more slowly then though...) so in practice a normal distribution can often be used to model the behaviour of an expected value.
 
 
 
@@ -73,7 +73,25 @@ For a more formal proof [see here](https://online.stat.psu.edu/stat414/lesson/26
 
 The $t$ distribution is closely related to the normal distribution - it's flatter, with more probability mass in the tails. As the degrees of freedom increase, it moves closer and closer to the standard normal, until %t(\infty)=\mathcal{N}(0,1)$.
 
-Having *degrees of freedom* is a clue that a $\chi^2$ distribution might be involved somewhere, and indeed 
+```{r echo=FALSE}
+library(ggplot2)
+
+tquant <- qt(0.975,1:30)
+tdata <- data.frame(tquant,degfree=1:30)
+q <- ggplot(tdata,aes(x=degfree, y=tquant)) +
+  geom_line() +
+  geom_hline(yintercept = qnorm(0.975),colour='green') +
+  labs(title="0.975 quantile of t-distribution, N(0,1)=1.96") +
+  xlab("degrees of freedom") + ylab("97.5% of probability mass before value")
+q
+```
+
+
+Having *degrees of freedom* is a clue that a $\chi^2$ distribution might be involved somewhere, and indeed if $Z \sim \mathcal{N}(0,1)$ and $V \sim \chi^2(\mu)$ then
+$$ T = \frac{Z}{\sqrt{(V/\nu)}}$$ has a $t$-distribution with $\nu$ degrees of freedom.
+
+Useful example: $Z = (\bar{X_n}-\mu)(\sqrt\frac{n}{\sigma^2})$ is standard normal by the central limit theorem, and $V = (n-1)\frac{S_n^2}{\sigma^2}$ is chi-squared with $(n-1)$ degrees of freedom as above, so:
+$$ T = \frac{Z}{\sqrt{V/(n-1)}} = (\bar{X_n}-\mu)(\sqrt\frac{n}{S_n^2}) $$ has a $t$-distribution with (n-1) degrees of freedom, which is very useful because the unknown $\sigma^2$ terms have cancelled out and $S_n^2$ is the sample variance which we can calculate from the data.
 
 # F Distribution {#F-link}
 
