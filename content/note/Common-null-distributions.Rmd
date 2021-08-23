@@ -23,7 +23,7 @@ Two famous results in statistics help explain the importance of the mean, (=*exp
 
 ## The law of large numbers
 
-Taking multiple readings and averaging them produces a more accurate estimate, a famous example is when Michelson was measuring the [speed of light](https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light).  To see why this is so consider the variance:
+Taking multiple readings and averaging them produces a more accurate estimate. A famous practical example is when Michelson was measuring the [speed of light](https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light).  To see why this is so consider the variance:
 
 With one experimental set of data ${X_1}$ to estimate a value $X$,  we might have $\mathbb{E}(X)=\mu$ and $\mathbb{V}(X)=\sigma^2$.
 However, we can more accurately zero-in on $\mu$ by considering the expectation  of multiple averages - if we have $n$ independent sets of data ${X_i}$ then $$\mathbb{E}(\bar{X_i})=\mathbb{E}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n}\sum_{i=1}^n \mathbb{E}(X_i)=\frac{1}{n}n\mu=\mu$$ (still!), but crucially...
