@@ -40,7 +40,7 @@ The central limit theorem is amazingly general: the distribution of the sample m
 
 As $n \to \infty$:
 $$\bar{X_n} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$$
-Equivalently, $\frac{\bar{X_n}-\mu}{\sigma^2}\sim \mathcal{N}(0,1)$. Although the population variance $\sigma^2$ is often unknown, a clever trick enables us to use the sample variance instead - with the [t-distribution below](#t-link)  
+Equivalently, $\frac{\bar{X_n}-\mu}{\sqrt{\sigma^2/n}}\sim \mathcal{N}(0,1)$. Although the population variance $\sigma^2$ is often unknown, a clever trick enables us to use the sample variance instead - with the [t-distribution below](#t-link)  
 
 # chi-squared Distribution {#chi-link}
 
