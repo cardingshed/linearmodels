@@ -31,12 +31,16 @@ $$\mathbb{V}(\bar{X_i})=\mathbb{V}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n^2}\su
 
 ## The Central Limit Theorem
 
-This is the super-charged version of the law of large numbers, remember it talks about
+This is the super-charged version of the law of large numbers, capturing more precisely how $\bar{X_n}$ approaches $\mu$ as $n$ increases.
 
 - the sample mean as a variable, and how it relates to the distribution mean
 - it's an asymptotic result, so relies on "large" sample sizes
 
 The central limit theorem is amazingly general: the distribution of the sample mean converges to a normal distribution even if the underlying distribution of each datapoint is discrete or bimodal (it does converge more slowly then though...) so in practice a normal distribution can often be used to model the behaviour of an expected value.
+
+As $n \to \infty$:
+$$\bar{X_n} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$$
+Equivalently, $\frac{\bar{X_n}-\mu}{\sigma^2}\sim \mathcal{N}(0,1)$.  
 
 
 
@@ -81,7 +85,7 @@ tdata <- data.frame(tquant,degfree=1:30)
 q <- ggplot(tdata,aes(x=degfree, y=tquant)) +
   geom_line() +
   geom_hline(yintercept = qnorm(0.975),colour='green') +
-  labs(title="0.975 quantile of t-distribution, N(0,1)=1.96") +
+  labs(title="0.975 quantile of t-distribution, N(0,1)=1.96 in green") +
   xlab("degrees of freedom") + ylab("97.5% of probability mass before value")
 q
 ```

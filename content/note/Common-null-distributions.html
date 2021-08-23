@@ -30,12 +30,15 @@ However, we can more accurately zero-in on <span class="math inline">\(\mu\)</sp
 </div>
 <div id="the-central-limit-theorem" class="section level2">
 <h2>The Central Limit Theorem</h2>
-<p>This is the super-charged version of the law of large numbers, remember it talks about</p>
+<p>This is the super-charged version of the law of large numbers, capturing more precisely how <span class="math inline">\(\bar{X_n}\)</span> approaches <span class="math inline">\(\mu\)</span> as <span class="math inline">\(n\)</span> increases.</p>
 <ul>
 <li>the sample mean as a variable, and how it relates to the distribution mean</li>
 <li>it’s an asymptotic result, so relies on “large” sample sizes</li>
 </ul>
 <p>The central limit theorem is amazingly general: the distribution of the sample mean converges to a normal distribution even if the underlying distribution of each datapoint is discrete or bimodal (it does converge more slowly then though…) so in practice a normal distribution can often be used to model the behaviour of an expected value.</p>
+<p>As <span class="math inline">\(n \to \infty\)</span>:
+<span class="math display">\[\bar{X_n} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})\]</span>
+Equivalently, <span class="math inline">\(\frac{\bar{X_n}-\mu}{\sigma^2}\sim \mathcal{N}(0,1)\)</span>.</p>
 </div>
 </div>
 <div id="chi-link" class="section level1">
