@@ -52,7 +52,7 @@ For a more formal proof <a href="https://online.stat.psu.edu/stat414/lesson/26/2
 </div>
 <div id="t-link" class="section level1">
 <h1>t Distribution</h1>
-<p>The <span class="math inline">\(t\)</span> distribution is closely related to the normal distribution - it’s flatter, with more probability mass in the tails. As the degrees of freedom increase, it moves closer and closer to the standard normal, until %t()=(0,1)$.</p>
+<p>The <span class="math inline">\(t\)</span> distribution is closely related to the normal distribution - it’s flatter, with more probability mass in the tails. As the degrees of freedom increase, it moves closer and closer to the standard normal, until <span class="math inline">\(t(\infty)=\mathcal{N}(0,1)\)</span>.</p>
 <p><img src="/note/Common-null-distributions_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Having <em>degrees of freedom</em> is a clue that a <span class="math inline">\(\chi^2\)</span> distribution might be involved somewhere, and indeed if <span class="math inline">\(Z \sim \mathcal{N}(0,1)\)</span> and <span class="math inline">\(V \sim \chi^2(\mu)\)</span> then
 <span class="math display">\[ T = \frac{Z}{\sqrt{(V/\nu)}}\]</span> has a <span class="math inline">\(t\)</span>-distribution with <span class="math inline">\(\nu\)</span> degrees of freedom.</p>
