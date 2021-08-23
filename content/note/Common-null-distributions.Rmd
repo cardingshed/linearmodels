@@ -40,13 +40,7 @@ The central limit theorem is amazingly general: the distribution of the sample m
 
 As $n \to \infty$:
 $$\bar{X_n} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$$
-Equivalently, $\frac{\bar{X_n}-\mu}{\sigma^2}\sim \mathcal{N}(0,1)$.  
-
-
-
-
-
-
+Equivalently, $\frac{\bar{X_n}-\mu}{\sigma^2}\sim \mathcal{N}(0,1)$. Although the population variance $\sigma^2$ is often unknown, a clever trick enables us to use the sample variance instead - with the [t-distribution below](#t-link)  
 
 # chi-squared Distribution {#chi-link}
 
@@ -75,7 +69,7 @@ For a more formal proof [see here](https://online.stat.psu.edu/stat414/lesson/26
 
 # t Distribution {#t-link}
 
-The $t$ distribution is closely related to the normal distribution - it's flatter, with more probability mass in the tails. As the degrees of freedom increase, it moves closer and closer to the standard normal, until %t(\infty)=\mathcal{N}(0,1)$.
+The $t$ distribution is closely related to the normal distribution - it's flatter, with more probability mass in the tails. As the degrees of freedom increase, it moves closer and closer to the standard normal, until $t(\infty)=\mathcal{N}(0,1)$.
 
 ```{r echo=FALSE}
 library(ggplot2)
