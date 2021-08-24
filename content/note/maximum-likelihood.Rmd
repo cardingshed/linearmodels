@@ -1,4 +1,4 @@
---
+---
 categories:
 - Unit-1_General-Statistics
 slug: maximum-likelihood
@@ -11,9 +11,12 @@ Looking for answers? The most likely answer is the MLE!
 
 This earworm &copy; 2007 [Larry Lesser](http://www.math.utep.edu/Faculty/lesser/Mathemusician.html) is a fun summary of properties of the MLE:
 
+<div id="corny mp3 moment">
 <audio controls>
   <source src="/media/mle.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
-</audio>
+</audio> </div>
 
 # Likelihood Ratio Test NP Lemma
+
+test this text more $\LaTeX here$

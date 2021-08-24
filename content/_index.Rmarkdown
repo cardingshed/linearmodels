@@ -6,6 +6,6 @@ title: Home
 
 ## M346
 
-I am an associate lecturer on a third year mathematics undergraduate course, M346: [linear statistical modelling](https://www.openuniversity.edu/courses/modules/m346).  This website is a collection of resources I am developing to help support students.
+I am an associate lecturer on a third year mathematics undergraduate course, M346: [linear statistical modelling](https://www.openuniversity.edu/courses/modules/m346). This website is a collection of supplementary resources I am developing to help support students. My aim is to help build confidence and intuitive understanding 💡 of each topic, rather than providing an first introduction or textbook coverage.
 
 ![Modelling](/img/statart.png)

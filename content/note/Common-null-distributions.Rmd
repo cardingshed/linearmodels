@@ -1,6 +1,6 @@
 ---
 categories:
-- Unit-1
+- Unit-1_General-Statistics
 slug: common-null-distributions
 tags:
 - normal
