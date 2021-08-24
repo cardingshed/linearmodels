@@ -25,7 +25,7 @@ Two famous results in statistics help explain the importance of the mean, (=*exp
 
 Taking multiple readings and averaging them produces a more accurate estimate. A famous practical example is when Michelson was measuring the [speed of light](https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light).  To see why this is so consider the variance:
 
-With one experimental set of data ${X_1}$ to estimate a value $X$,  we might have $\mathbb{E}(X)=\mu$ and $\mathbb{V}(X)=\sigma^2$.
+Suppose we are studying a random variable $X$, and are interested in the unknown 'true' values  $\mathbb{E}(X)=\mu$ and $\mathbb{V}(X)=\sigma^2$. We might have one experimental set of data ${X_1}$, and sensibly use $\bar{X_1}$ to estimate $\mu$.
 However, we can more accurately zero-in on $\mu$ by considering the expectation  of multiple averages - if we have $n$ independent sets of data ${X_i}$ then $$\mathbb{E}(\bar{X_i})=\mathbb{E}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n}\sum_{i=1}^n \mathbb{E}(X_i)=\frac{1}{n}n\mu=\mu$$ (still!), but crucially...
 $$\mathbb{V}(\bar{X_i})=\mathbb{V}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n^2}\sum_{i=1}^n \mathbb{V}(X_i)=\frac{1}{n^2}n\sigma^2=\frac{\sigma^2}{n}$$ so $\bar{X_i}$ is probably *closer* to $\mu$ than $\bar{X_1}$ is - the standard deviation reduces by a factor of $\sqrt{n}$ as $n$ becomes a larger number.  Given sufficiently large $n$, we can get arbitrarily close to $\mu$!
 
