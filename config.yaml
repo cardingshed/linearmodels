@@ -16,6 +16,9 @@ menu:
     - name: Home
       url: ""
       weight: 1
+    - name: Notes
+      url: "note/"
+      weight: 2
     - name: Units
       url: "categories/"
       weight: 3

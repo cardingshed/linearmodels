@@ -4,7 +4,7 @@ categories:
 slug: maximum-likelihood
 tags:
 - normal
-title: Maximum Likelihood Estimation
+title: Maximum likelihood estimation
 ---
 
 Looking for answers? The most likely answer is the MLE!
