@@ -7,9 +7,20 @@ tags:
 title: Maximum likelihood estimation
 ---
 
-Looking for answers? The most likely answer is the MLE!
+Looking for good $\mu$s? The most likely answer is the MLE!
 
-This earworm &copy; 2007 [Larry Lesser](http://www.math.utep.edu/Faculty/lesser/Mathemusician.html) is a fun summary of properties of the MLE:
+In many real-world applications, a **parametric distribution** with known density $f(x;\theta)$ is a good model for the variable of interest, $x$. Examples:
+- If $x$ represents heights, then we might have $f=\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x-\mu}{\sigma}\biggr)^2\biggr]$ with $\theta$ the vector $(\mu, \sigma^2).
+- If $x$ represents a count, a Poisson distribution is often sensible 
+$f=\frac{\lambda^x e^{-x}}{x!}$ here $\theta = \lambda$.
+
+If we know the density function $f$, this is equivalent to knowing the likelihood at any point $x_0$.  If we have multiple *independent* observations ${x_i}$ then the probability of all of these is the product of their individual probabilities (because they're independent).  This product is called the likelihood function, $\mathcal{L}(\theta)$, so in the examples above we would have 
+- $\mathcal{L}_{normal}(\theta) = \mathcal{L}(\mu,\sigma^2) = \prod_{i=1}^{n}\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x_i-\mu}{\sigma}\biggr)^2\biggr]$
+- $\mathcal{L}_{poisson}(\theta) =\mathcal{L}(\lambda) =\prod_{i=1}^{n}\frac{\lambda^x_i e^{-x_i}}{x_i!}$
+
+> The big idea of maximum likelihood estimation is to consider the likelihood as a function of $\theta$, and solve the question "which value of my parameter was most likely to result in the data I can see?" by maximising $\mathcal{L}(\theta)$.
+
+The MLE is intuitively sensible, but also has a bewildering array of useful properties, which get better and better as the sample size gets larger - if you're interested in them try this earworm &copy;2007 [Larry Lesser](http://www.math.utep.edu/Faculty/lesser/Mathemusician.html) for a fun summary:
 
 <div id="corny mp3 moment">
 <audio controls>
@@ -17,6 +28,10 @@ This earworm &copy; 2007 [Larry Lesser](http://www.math.utep.edu/Faculty/lesser/
 Your browser does not support the audio element.
 </audio> </div>
 
-# Likelihood Ratio Test NP Lemma
+# Maximising the likelihood function
 
-test this text more $\LaTeX here$
+In practice this will be implemented (as the default setting!) by your favourite statistics program 😎 however it is worth calling out that although the algebra looks scary at first, it's often relatively straightforward from the known density $f$.
+A couple of noteworth points:
+1) Normally we work with the *log likelihood*, $\textrm{log}(\mathcal{L}(\theta))$ because each $x_i$ likelihood is a very small number and adding small numbers rather than multiplying them helps avoid issues with numerical precision.  Note that a function $g$ and $\textrm{log}(g)$ have their maximum at the same point.
+2) Maximising $g$ is the same as minimising $-g$ if that's easier for your program, and similarly $g$ and $2g$ have a maximum at the same point.
+
