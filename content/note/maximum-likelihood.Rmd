@@ -9,7 +9,7 @@ title: Maximum likelihood estimation
 
 Looking for good $\mu$s? The most likely answer is the MLE!
 
-In many real-world applications, a **parametric distribution** with known density $f(x;\theta)$ is a good model for the variable of interest, $x$. Examples:
+In many real-world applications, a **parametric distribution** with known density $f(x;\theta)$ where $f$ has parameter(s) $\theta$ is a good model for the variable of interest, $x$. Examples:
 
 - If $x$ represents heights, then we might have $f=\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x-\mu}{\sigma}\biggr)^2\biggr]$ with $\theta$ the vector $(\mu, \sigma^2)$.
 - If $x$ represents a count, a Poisson distribution is often sensible 
