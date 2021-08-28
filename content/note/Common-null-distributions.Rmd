@@ -64,7 +64,7 @@ p
 
 
 If $X \sim \mathcal{N}(\mu,\sigma^2)$, we can intuitively see how a chi-squared distribution is related to variance: 
-$S^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i - \mu)^2$ which implies $\frac{S^2}{\sigma^2}=\frac{1}{n}\sum_{i=1}^{n}(\frac{X_i - \mu}{\sigma})^2=\frac{1}{n}\sum_{i=1}^{n}Z_i^2$ where $Z_i \sim \mathcal{N}(0,1)$.  Note that in practice $\mu$ is not known but estimated by the sample mean $\bar{X}$ - hence the [Bessel correction](https://en.wikipedia.org/wiki/Bessel's_correction) factor of $\frac{1}{n-1}$ in the normal formula for sample variance and also because there is one degree of freedom less (hand-wavy stats! but very typical that for each parameter we estimate we lose a degree of freedom) we have the result $$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$$
+$S^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i - \mu)^2$ which implies $\frac{S^2}{\sigma^2}=\frac{1}{n}\sum_{i=1}^{n}(\frac{X_i - \mu}{\sigma})^2=\frac{1}{n}\sum_{i=1}^{n}Z_i^2$ where $Z_i \sim \mathcal{N}(0,1)$.  Note that in practice $\mu$ is not known but estimated by the sample mean $\bar{X}$ - hence the [Bessel correction](https://en.wikipedia.org/wiki/Bessel's_correction) factor of $\frac{1}{n-1}$ in the normal formula for sample variance and also, because there is one degree of freedom less (hand-wavy stats! but very typical that for each parameter we estimate we lose a degree of freedom), we have the result $$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$$
 For a more formal proof [see here](https://online.stat.psu.edu/stat414/lesson/26/26.3)
 
 # t Distribution {#t-link}
