@@ -10,15 +10,19 @@ title: Maximum likelihood estimation
 Looking for good $\mu$s? The most likely answer is the MLE!
 
 In many real-world applications, a **parametric distribution** with known density $f(x;\theta)$ is a good model for the variable of interest, $x$. Examples:
-- If $x$ represents heights, then we might have $f=\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x-\mu}{\sigma}\biggr)^2\biggr]$ with $\theta$ the vector $(\mu, \sigma^2).
+
+- If $x$ represents heights, then we might have $f=\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x-\mu}{\sigma}\biggr)^2\biggr]$ with $\theta$ the vector $(\mu, \sigma^2)$.
 - If $x$ represents a count, a Poisson distribution is often sensible 
 $f=\frac{\lambda^x e^{-x}}{x!}$ here $\theta = \lambda$.
 
 If we know the density function $f$, this is equivalent to knowing the likelihood at any point $x_0$.  If we have multiple *independent* observations ${x_i}$ then the probability of all of these is the product of their individual probabilities (because they're independent).  This product is called the likelihood function, $\mathcal{L}(\theta)$, so in the examples above we would have 
-- $\mathcal{L}_{normal}(\theta) = \mathcal{L}(\mu,\sigma^2) = \prod_{i=1}^{n}\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x_i-\mu}{\sigma}\biggr)^2\biggr]$
+
+- $\mathcal{L}_{normal}(\theta) = \mathcal{L}(\mu,\sigma^2) = \prod_{i=1}^{n}\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x_i-\mu}{\sigma}\biggr)^2\biggr]$ = $\biggl(\frac{1}{\sigma\sqrt{2\pi}}\biggl)^n\exp{\biggl[-\frac{1}{2\sigma^2}\sum_{i=1}^n(x_i-\mu)^2\biggr]}$
 - $\mathcal{L}_{poisson}(\theta) =\mathcal{L}(\lambda) =\prod_{i=1}^{n}\frac{\lambda^x_i e^{-x_i}}{x_i!}$
 
+
 > The big idea of maximum likelihood estimation is to consider the likelihood as a function of $\theta$, and solve the question "which value of my parameter was most likely to result in the data I can see?" by maximising $\mathcal{L}(\theta)$.
+
 
 The MLE is intuitively sensible, but also has a bewildering array of useful properties, which get better and better as the sample size gets larger - if you're interested in them try this earworm &copy;2007 [Larry Lesser](http://www.math.utep.edu/Faculty/lesser/Mathemusician.html) for a fun summary:
 
@@ -30,8 +34,10 @@ Your browser does not support the audio element.
 
 # Maximising the likelihood function
 
-In practice this will be implemented (as the default setting!) by your favourite statistics program 😎 however it is worth calling out that although the algebra looks scary at first, it's often relatively straightforward from the known density $f$.
-A couple of noteworth points:
-1) Normally we work with the *log likelihood*, $\textrm{log}(\mathcal{L}(\theta))$ because each $x_i$ likelihood is a very small number and adding small numbers rather than multiplying them helps avoid issues with numerical precision.  Note that a function $g$ and $\textrm{log}(g)$ have their maximum at the same point.
-2) Maximising $g$ is the same as minimising $-g$ if that's easier for your program, and similarly $g$ and $2g$ have a maximum at the same point.
+In practice this will be implemented (as the default setting!) by your favourite statistics program 😎 however it is worth calling out that although the algebra looks scary at first, it's often relatively straightforward starting from the known density $f$.
+
+A couple of noteworthy points:
+
+1) Normally we work with the *log likelihood*, $\textrm{log}(\mathcal{L}(\theta))$ because each $x_i$ likelihood is a very small number and adding small numbers rather than multiplying them helps avoid issues with numerical precision.  Note that a function $g$ and $\textrm{log}(g)$ have their maximum at the same point. It's easy to see how taking logs simplifies calculation: differentiating expressions with $\sum{}$ is often algebraically easier than those with $\prod{}$.
+2) Maximising $g$ is the same as minimising $-g$ so either implementation is fine, and similarly multiplying functions by positive constants doesn't our estimate $\hat{\theta}$: $g$ and $2g$ have a maximum at the same point.
 
