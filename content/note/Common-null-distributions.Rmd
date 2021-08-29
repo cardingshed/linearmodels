@@ -26,8 +26,8 @@ Two famous results in statistics help explain the importance of the mean, (=*exp
 Taking multiple readings and averaging them produces a more accurate estimate. A famous practical example is when Michelson was measuring the [speed of light](https://en.wikipedia.org/wiki/Albert_A._Michelson#Speed_of_light).  To see why this is so consider the variance:
 
 Suppose we are studying a random variable $X$, and are interested in the unknown 'true' values  $\mathbb{E}(X)=\mu$ and $\mathbb{V}(X)=\sigma^2$. We might have one experimental set of data ${X_1}$, and sensibly use $\bar{X_1}$ to estimate $\mu$.
-However, we can more accurately zero-in on $\mu$ by considering the expectation  of multiple averages - if we have $n$ independent sets of data ${X_i}$ then $$\mathbb{E}(\bar{X_i})=\mathbb{E}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n}\sum_{i=1}^n \mathbb{E}(X_i)=\frac{1}{n}n\mu=\mu$$ (still!), but crucially...
-$$\mathbb{V}(\bar{X_i})=\mathbb{V}(\frac{1}{n}\sum_{i=1}^n X_i)=\frac{1}{n^2}\sum_{i=1}^n \mathbb{V}(X_i)=\frac{1}{n^2}n\sigma^2=\frac{\sigma^2}{n}$$ so $\bar{X_i}$ is probably *closer* to $\mu$ than $\bar{X_1}$ is - the standard deviation reduces by a factor of $\sqrt{n}$ as $n$ becomes a larger number.  Given sufficiently large $n$, we can get arbitrarily close to $\mu$!
+However, we can more accurately zero-in on $\mu$ by considering the expectation  of multiple averages - if we have $n$ independent sets of data ${X_i}$ then $$\mathbb{E}(\bar{X_i})=\mathbb{E}\biggl(\frac{1}{n}\sum_{i=1}^n X_i\biggr)=\frac{1}{n}\sum_{i=1}^n \mathbb{E}(X_i)=\frac{1}{n}n\mu=\mu$$ (still!), but crucially...
+$$\mathbb{V}(\bar{X_i})=\mathbb{V}\biggl(\frac{1}{n}\sum_{i=1}^n X_i\biggr)=\frac{1}{n^2}\sum_{i=1}^n \mathbb{V}(X_i)=\frac{1}{n^2}n\sigma^2=\frac{\sigma^2}{n}$$ so $\bar{X_i}$ is probably *closer* to $\mu$ than $\bar{X_1}$ is - the standard deviation reduces by a factor of $\sqrt{n}$ as $n$ becomes a larger number.  Given sufficiently large $n$, we can get arbitrarily close to $\mu$!
 
 ## The Central Limit Theorem
 
@@ -39,7 +39,7 @@ This is the super-charged version of the law of large numbers, capturing more pr
 The central limit theorem is amazingly general: the distribution of the sample mean converges to a normal distribution even if the underlying distribution of each datapoint is discrete or bimodal (it does converge more slowly then though...) so in practice a normal distribution can often be used to model the behaviour of an expected value.
 
 As $n \to \infty$:
-$$\bar{X_n} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$$
+$$\bar{X_n} \sim \mathcal{N}\biggl(\mu, \frac{\sigma^2}{n}\biggr)$$
 Equivalently, $\frac{\bar{X_n}-\mu}{\sqrt{\sigma^2/n}}\sim \mathcal{N}(0,1)$. Although the population variance $\sigma^2$ is often unknown, a clever trick enables us to use the sample variance instead - with the [t-distribution below](#t-link)  
 
 # chi-squared Distribution {#chi-link}
@@ -89,7 +89,7 @@ Having *degrees of freedom* is a clue that a $\chi^2$ distribution might be invo
 $$ T = \frac{Z}{\sqrt{(V/\nu)}}$$ has a $t$-distribution with $\nu$ degrees of freedom.
 
 Useful example: $Z = (\bar{X_n}-\mu)(\sqrt\frac{n}{\sigma^2})$ is standard normal by the central limit theorem, and $V = (n-1)\frac{S_n^2}{\sigma^2}$ is chi-squared with $(n-1)$ degrees of freedom as above, so:
-$$ T = \frac{Z}{\sqrt{V/(n-1)}} = (\bar{X_n}-\mu)(\sqrt\frac{n}{S_n^2}) $$ has a $t$-distribution with (n-1) degrees of freedom, which is very useful because the unknown $\sigma^2$ terms have cancelled out and $S_n^2$ is the sample variance which we can calculate from the data.
+$$ T = \frac{Z}{\sqrt{V/(n-1)}} = (\bar{X_n}-\mu)\biggl(\sqrt\frac{n}{S_n^2}\biggr) $$ has a $t$-distribution with (n-1) degrees of freedom, which is very useful because the unknown $\sigma^2$ terms have cancelled out and $S_n^2$ is the sample variance which we can calculate from the data.
 
 # F Distribution {#F-link}
 
