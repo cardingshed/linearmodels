@@ -48,7 +48,7 @@ The origin of the $\chi^2$ distribution is as the sum of independent squared sta
 
 $Y = Z_1^2 + Z_2^2 + \dots Z_n^2$, where $Z_i \sim \mathcal{N}(0,1)$, then $Y \sim \chi^2(n)$, a *chi-squared distribution with $n$ degrees of freedom*.  Note the relationship with the CLT: as more terms are added the chi-squared distribution (slowly) becomes more like the normal. 
 
-```{r echo=FALSE, warning=FALSE}
+```{r echo=TRUE, warning=FALSE}
 library(ggplot2)
 
 dataf <- data.frame(x=rep(seq(from=0.01, to=12, length.out=50), times=12), degf=rep(1:12, each=50)) 
@@ -71,7 +71,7 @@ For a more formal proof [see here](https://online.stat.psu.edu/stat414/lesson/26
 
 The $t$ distribution is closely related to the normal distribution - it's flatter, with more probability mass in the tails. As the degrees of freedom increase, it moves closer and closer to the standard normal, until $t(\infty)=\mathcal{N}(0,1)$.
 
-```{r echo=FALSE}
+```{r echo=TRUE}
 library(ggplot2)
 
 tquant <- qt(0.975,1:30)

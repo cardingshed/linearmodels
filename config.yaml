@@ -25,6 +25,9 @@ menu:
     - name: Tags
       url: "tags/"
       weight: 4
+    - name: Software
+      url: "software/"
+      weight: 5
 
 params:
   description: "Tuition notes to support M346 - statistical linear modelling"
