@@ -6,7 +6,7 @@ title: Home
 
 ## M346/M348 
 
-M346/M348 is a third year Open University course in [linear statistical modelling](https://www.openuniversity.edu/courses/modules/m346).  This website is written entirely in R, partly as a place to show off some of the functionality of R, by highlighting a few interesting ideas and intuitive understanding 💡 of some of the course's topics - it's not a formal introduction or textbook coverage.
+M346/M348 is a third year Open University course in [linear statistical modelling](https://www.openuniversity.edu/courses/modules/m346).  This website is written entirely in R partly as a place to show off some of the functionality of R.  The aim is to find ways to highlight a few interesting ideas and help intuitive understanding 💡 of some of the course's topics - it's not a formal introduction or textbook coverage.
 
 Here's a [sample page](https://lm.deeprich.net/note/common-null-distributions/) which has some visible R code for the graphs - all content is available GitHub [here](https://github.com/deeprich/linearmodels) 
 
