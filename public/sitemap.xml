@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>/about/</loc>
+  </url><url>
+    <loc>/categories/</loc>
+  </url><url>
+    <loc>/tags/central-limit-theorem/</loc>
+  </url><url>
+    <loc>/tags/chi-squared/</loc>
+  </url><url>
+    <loc>/tags/f-distribution/</loc>
+  </url><url>
+    <loc>/</loc>
+  </url><url>
+    <loc>/note/common-null-distributions/</loc>
+  </url><url>
+    <loc>/tags/law-of-large-numbers/</loc>
+  </url><url>
+    <loc>/note/maximum-likelihood/</loc>
+  </url><url>
+    <loc>/tags/normal/</loc>
+  </url><url>
+    <loc>/note/</loc>
+  </url><url>
+    <loc>/software/</loc>
+  </url><url>
+    <loc>/tags/t-distribution/</loc>
+  </url><url>
+    <loc>/tags/</loc>
+  </url><url>
+    <loc>/categories/unit-1_general-statistics/</loc>
+  </url>
+</urlset>

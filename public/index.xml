@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on Linear Statistical Modelling</title>
+    <link>/</link>
+    <description>Recent content in Home on Linear Statistical Modelling</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Hugo XMin</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>XMin is the first Hugo theme I have designed. The original reason that I wrote it was I needed a minimal example of Hugo themes when I was writing the blogdown book. Basically I wanted a simple theme that supports a navigation menu, a home page, other single pages, lists of pages, blog posts, categories, tags, and RSS. That is all. Nothing fancy. In terms of CSS and JavaScript, I really want to keep them minimal.</description>
+    </item>
+    
+    <item>
+      <title>Intuitive background for parameter distributions</title>
+      <link>/note/common-null-distributions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/note/common-null-distributions/</guid>
+      <description>How to understand which distribution is used when and why it’s in that test…
+Often, parameters in linear modelling can be assumed to follow a known distribution if a null-hypothesis is true, which is the justification for e.g. Wald-tests (normal), chi-squared tests, \(t\)-tests, and F-tests.
+The normal, chi-squared, t and F distributions are the most commonly met as null-distributions in these tests - this is a brief guide to help build an intuitive understanding of why they arise.</description>
+    </item>
+    
+    <item>
+      <title>Maximum likelihood estimation</title>
+      <link>/note/maximum-likelihood/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/note/maximum-likelihood/</guid>
+      <description>Looking for good \(\mu\)s? The most likely answer is the MLE!
+In many real-world applications, a parametric distribution with known density \(f(x;\theta)\) where \(f\) has parameter(s) \(\theta\) is a good model for the variable of interest, \(x\). Examples:
+ If \(x\) represents heights, then we might have \(f=\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x-\mu}{\sigma}\biggr)^2\biggr]\) with \(\theta\) the vector \((\mu, \sigma^2)\). If \(x\) represents a count, a Poisson distribution is often sensible \(f=\frac{\lambda^x e^{-x}}{x!}\) here \(\theta = \lambda\).</description>
+    </item>
+    
+    <item>
+      <title>Statistical Software Links</title>
+      <link>/software/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/software/</guid>
+      <description>Some useful links for GenStat and R
+GenStat GenStat is published by VSNI international, who have a quick start guide and a selection of tutorial videos on their website.
+R This website is written in R: all code used in the notes is available in R markdown (.Rmd) files on GitHub here.
+If you&amp;rsquo;re programming using R, I would recommend the IDE RStudio (download from here) and following chief scientist Hadley Wickham for latest developments in the tidyverse, a collection of packages for data analysis.</description>
+    </item>
+    
+  </channel>
+</rss>

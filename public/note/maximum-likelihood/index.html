@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maximum likelihood estimation | Linear Statistical Modelling</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/note/">Notes</a></li>
+      
+      <li><a href="/categories/">Units</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/software/">Software</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Maximum likelihood estimation</span></h1>
+
+
+</div>
+
+<main>
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<p>Looking for good <span class="math inline">\(\mu\)</span>s? The most likely answer is the MLE!</p>
+<p>In many real-world applications, a <strong>parametric distribution</strong> with known density <span class="math inline">\(f(x;\theta)\)</span> where <span class="math inline">\(f\)</span> has parameter(s) <span class="math inline">\(\theta\)</span> is a good model for the variable of interest, <span class="math inline">\(x\)</span>. Examples:</p>
+<ul>
+<li>If <span class="math inline">\(x\)</span> represents heights, then we might have <span class="math inline">\(f=\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x-\mu}{\sigma}\biggr)^2\biggr]\)</span> with <span class="math inline">\(\theta\)</span> the vector <span class="math inline">\((\mu, \sigma^2)\)</span>.</li>
+<li>If <span class="math inline">\(x\)</span> represents a count, a Poisson distribution is often sensible
+<span class="math inline">\(f=\frac{\lambda^x e^{-x}}{x!}\)</span> here <span class="math inline">\(\theta = \lambda\)</span>.</li>
+</ul>
+<p>If we know the density function <span class="math inline">\(f\)</span>, this is equivalent to knowing the likelihood at any point <span class="math inline">\(x_0\)</span>. If we have multiple <em>independent</em> observations <span class="math inline">\({x_i}\)</span> then the probability of all of these is the product of their individual probabilities (because they’re independent). This product is called the likelihood function, <span class="math inline">\(\mathcal{L}(\theta)\)</span>, so in the examples above we would have</p>
+<ul>
+<li><span class="math inline">\(\mathcal{L}_{normal}(\theta) = \mathcal{L}(\mu,\sigma^2) = \prod_{i=1}^{n}\frac{1}{\sigma\sqrt{2\pi}}\exp\biggl[-\frac{1}{2}\biggl(\frac{x_i-\mu}{\sigma}\biggr)^2\biggr]\)</span> = <span class="math inline">\(\biggl(\frac{1}{\sigma\sqrt{2\pi}}\biggl)^n\exp{\biggl[-\frac{1}{2\sigma^2}\sum_{i=1}^n(x_i-\mu)^2\biggr]}\)</span></li>
+<li><span class="math inline">\(\mathcal{L}_{poisson}(\theta) =\mathcal{L}(\lambda) =\prod_{i=1}^{n}\frac{\lambda^x_i e^{-x_i}}{x_i!}\)</span></li>
+</ul>
+<blockquote>
+<p>The big idea of maximum likelihood estimation is to consider the likelihood as a function of <span class="math inline">\(\theta\)</span>, and solve the question “which value of my parameter was most likely to result in the data I can see?” by maximising <span class="math inline">\(\mathcal{L}(\theta)\)</span>.</p>
+</blockquote>
+<p>The MLE is intuitively sensible, but also has a bewildering array of useful properties, which get better and better as the sample size gets larger - if you’re interested in them try this earworm ©2007 <a href="http://www.math.utep.edu/Faculty/lesser/Mathemusician.html">Larry Lesser</a> for a fun summary:</p>
+<div id="corny mp3 moment">
+<audio controls>
+<source src="/media/mle.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</div>
+<div id="maximising-the-likelihood-function" class="section level1">
+<h1>Maximising the likelihood function</h1>
+<p>In practice this will be implemented (as the default setting!) by your favourite statistics program 😎 however it is worth calling out that although the algebra looks scary at first, it’s often relatively straightforward starting from the known density <span class="math inline">\(f\)</span>.</p>
+<p>A couple of noteworthy points:</p>
+<ol style="list-style-type: decimal">
+<li>Normally we work with the <em>log likelihood</em>, <span class="math inline">\(\textrm{log}(\mathcal{L}(\theta))\)</span> because each <span class="math inline">\(x_i\)</span> likelihood is a very small number and adding small numbers rather than multiplying them helps avoid issues with numerical precision. Note that a function <span class="math inline">\(g\)</span> and <span class="math inline">\(\textrm{log}(g)\)</span> have their maximum at the same point. It’s easy to see how taking logs simplifies calculation: differentiating expressions with <span class="math inline">\(\sum{}\)</span> is often algebraically easier than those with <span class="math inline">\(\prod{}\)</span>.</li>
+<li>Maximising <span class="math inline">\(g\)</span> is the same as minimising <span class="math inline">\(-g\)</span> so either implementation is fine, and similarly multiplying functions by positive constants doesn’t our estimate <span class="math inline">\(\hat{\theta}\)</span>: <span class="math inline">\(g\)</span> and <span class="math inline">\(2g\)</span> have a maximum at the same point.</li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  <script src="//yihui.org/js/math-code.js"></script>
+<script async src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.org/js/center-img.js"></script>
+
+  
+  <hr/>
+  © <a href="https://deeprich.net">richard johnson</a> 2021 | <a href="https://github.com/deeprich">Github</a>
+  
+  </footer>
+  </body>
+</html>
+

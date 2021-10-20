@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>F-distribution on Linear Statistical Modelling</title>
+    <link>/tags/f-distribution/</link>
+    <description>Recent content in F-distribution on Linear Statistical Modelling</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/tags/f-distribution/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Intuitive background for parameter distributions</title>
+      <link>/note/common-null-distributions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/note/common-null-distributions/</guid>
+      <description>How to understand which distribution is used when and why it’s in that test…
+Often, parameters in linear modelling can be assumed to follow a known distribution if a null-hypothesis is true, which is the justification for e.g. Wald-tests (normal), chi-squared tests, \(t\)-tests, and F-tests.
+The normal, chi-squared, t and F distributions are the most commonly met as null-distributions in these tests - this is a brief guide to help build an intuitive understanding of why they arise.</description>
+    </item>
+    
+  </channel>
+</rss>
